@@ -1,0 +1,55 @@
+---
+const services = [
+  {
+    title: "Strategic Planning",
+    description:
+      "Our strategic planning services help businesses set clear objectives, define strategies, and create action plans for success. We work closely with clients to develop customized strategies that align with their goals and drive sustainable growth.",
+  },
+  {
+    title: "Financial Advisory",
+    description:
+      "From financial planning to risk management, our financial advisory services provide you with the insights and guidance needed to make informed decisions and optimize your financial performance.",
+  },
+  {
+    title: "Operational Excellence",
+    description:
+      "Achieve operational excellence with our tailored solutions that streamline your processes, improve efficiency, and reduce costs, enabling your business to operate at peak performance.",
+  },
+];
+---
+
+<section id="services" class="bg-navy py-16 md:py-24" data-animate="fade-up">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+
+    <!-- Header -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mb-10 md:mb-12">
+      <h2 class="text-4xl md:text-6xl font-bold text-white">Our Services</h2>
+      <p class="text-gray-300 text-lg leading-relaxed md:self-end">
+        Explore our range of comprehensive consulting services designed to
+        address your specific business needs and drive sustainable growth
+      </p>
+    </div>
+
+    <!-- Alternating cards: odd → right-aligned, even → left-aligned (desktop only) -->
+    <div class="space-y-6 md:space-y-12">
+      {
+        services.map((s, i) => (
+          <div
+            class={`service-card w-full md:w-[62%] bg-cream rounded-2xl p-8 md:p-10 ${i % 2 === 0 ? "md:ml-auto" : "md:mr-auto"}`}
+          >
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" class="mb-6">
+              <line x1="22" y1="4"  x2="22" y2="40" stroke="#e8541a" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="4"  y1="13" x2="40" y2="31" stroke="#e8541a" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="4"  y1="31" x2="40" y2="13" stroke="#e8541a" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <div class="card-content">
+              <h3 class="text-2xl font-bold mb-4">{s.title}</h3>
+              <p class="text-gray-600 leading-relaxed">{s.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,51 @@
+---
+const testimonials = [
+  {
+    quote:
+      "Leadsult Consulting exceeded our expectations with innovative solutions and deep industry knowledge, becoming a true partner in our journey toward business excellence.",
+    author: "David Lee",
+  },
+  {
+    quote:
+      "The expertise and professionalism of the Leadsult Consulting team are unmatched. Their strategic, hands-on guidance has been key to achieving our business goals.",
+    author: "Jane Smith",
+  },
+  {
+    quote:
+      "Partnering with Leadsult Consulting was a game-changer, giving us the strategic insight to overcome challenges and seize new opportunities.",
+    author: "Michael Chen",
+  },
+  {
+    quote:
+      "I highly recommend Leadsult Consulting. Their commitment to client success and tangible results make them a valuable partner for any business.",
+    author: "Sarah Johnson",
+  },
+];
+---
+
+<section class="py-16 md:py-24 bg-white" data-animate="fade-up">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-12">
+      <h2 class="text-4xl md:text-6xl font-bold leading-none lg:shrink-0">Testimonials</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {
+          testimonials.map((t) => (
+            <div class="bg-orange rounded-2xl p-8 md:p-10">
+              <!-- White asterisk icon -->
+              <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+                <line x1="22" y1="4"  x2="22" y2="40" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="4"  y1="13" x2="40" y2="31" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="4"  y1="31" x2="40" y2="13" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+              <blockquote class="mt-6 text-white text-[16px] leading-relaxed mb-8">
+                "{t.quote}"
+              </blockquote>
+              <p class="text-white font-medium text-sm">{t.author}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

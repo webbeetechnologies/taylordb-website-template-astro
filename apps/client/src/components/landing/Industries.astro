@@ -1,0 +1,51 @@
+---
+const industries = [
+  {
+    name: "Energy",
+    description:
+      "Our strategic planning services help businesses set clear objectives, define strategies, and create action plans for success. We work closely with clients to develop customized strategies that align with their goals and drive sustainable growth.",
+  },
+  {
+    name: "IT",
+    description:
+      "Our market analysis services involve thorough research and analysis to help businesses understand market trends, competition, and consumer behavior. By providing valuable insights, we assist businesses in making informed decisions and seizing opportunities for growth.",
+  },
+  {
+    name: "Public Services",
+    description:
+      "We offer comprehensive financial advisory services to help businesses manage their finances effectively, optimize performance, and achieve financial stability. Our expert guidance and strategic recommendations help you navigate complex financial landscapes.",
+  },
+];
+---
+
+<section class="py-16 md:py-24 bg-white" data-animate="fade-up">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-8 md:gap-16 mb-6 items-start">
+      <h2 class="text-5xl md:text-7xl font-bold leading-none">Industries</h2>
+      <p class="text-gray-600 leading-relaxed text-lg md:max-w-[880px]">
+        Our consulting firm offers a wide range of professional services tailored
+        to meet the unique needs of businesses. From strategic planning to market
+        analysis, we provide expert guidance and solutions to help businesses
+        thrive and grow
+      </p>
+    </div>
+
+    <div class="divide-y divide-gray-300 border-t border-gray-300 mt-10">
+      {
+        industries.map((ind) => (
+          <div class="py-8 md:py-12 grid grid-cols-1 md:grid-cols-[240px_90px_1fr] gap-3 md:gap-8 items-start">
+            <h3 class="text-2xl font-medium">{ind.name}</h3>
+            <div class="hidden md:flex justify-center pt-2">
+              <img
+                src="/images/industry-arrow.svg"
+                alt=""
+                class="h-10 w-10 -rotate-90"
+              />
+            </div>
+            <p class="text-gray-600 leading-relaxed text-base md:max-w-[760px]">{ind.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

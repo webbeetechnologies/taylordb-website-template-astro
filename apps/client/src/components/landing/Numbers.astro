@@ -1,0 +1,33 @@
+---
+const stats = [
+  { number: "500",  label: "Clients Served"       },
+  { number: "80+",  label: "Projects Completed"   },
+  { number: "12",   label: "Years of Experience"  },
+  { number: "95%",  label: "Satisfaction Rate"    },
+];
+---
+
+<section class="py-16 md:py-24 bg-white" data-animate="fade-up">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-[340px_1fr] gap-8 md:gap-16 mb-10 md:mb-16 items-start">
+      <h2 class="text-5xl md:text-7xl font-bold leading-none">Our Numbers</h2>
+      <p class="text-gray-600 leading-relaxed text-lg md:max-w-[880px]">
+        At Leadsult Consulting, we believe that transparency is essential for
+        both growth and visitor loyalty. Below you'll find our latest stats and
+        numbers. If you have any questions, please don't hesitate to contact us
+        today
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 md:gap-6 md:max-w-[960px] md:ml-auto">
+      {
+        stats.map((s) => (
+          <div class="bg-navy text-white rounded-2xl p-8 md:p-12">
+            <div class="text-4xl md:text-[64px] font-semibold mb-4 md:mb-6">{s.number}</div>
+            <div class="text-gray-300 text-sm md:text-base">{s.label}</div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

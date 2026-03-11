@@ -1,0 +1,95 @@
+---
+---
+
+<footer>
+  <!-- Team photo strip with parallax -->
+  <div class="overflow-hidden relative h-[280px] md:h-[500px]" id="footer-parallax">
+    <img
+      src="/images/footer.webp"
+      alt="Team collaboration"
+      class="w-full object-cover absolute left-0"
+      style="height: 130%; top: 0;"
+      id="footer-parallax-img"
+    />
+  </div>
+
+  <script>
+    const img = document.getElementById("footer-parallax-img");
+    const container = document.getElementById("footer-parallax");
+
+    function updateParallax() {
+      if (!img || !container) return;
+      const rect = container.getBoundingClientRect();
+      const viewportH = window.innerHeight;
+      const progress = Math.max(0, Math.min(1, (viewportH - rect.top) / (viewportH + rect.height)));
+      const offset = -progress * 30;
+      img.style.transform = `translateY(${offset}%)`;
+    }
+
+    window.addEventListener("scroll", updateParallax, { passive: true });
+    updateParallax();
+  </script>
+
+  <!-- Navy section -->
+  <div class="bg-navy text-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-10 md:gap-12">
+
+        <!-- Brand -->
+        <div class="sm:col-span-2 lg:col-span-1">
+          <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="13" y1="20" x2="13" y2="10" stroke="#e8541a" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="13" y1="10" x2="6"  y2="4"  stroke="#e8541a" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="13" y1="10" x2="20" y2="4"  stroke="#e8541a" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="13" y1="10" x2="2"  y2="13" stroke="#e8541a" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="13" y1="10" x2="24" y2="13" stroke="#e8541a" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="13" y1="10" x2="5"  y2="19" stroke="#e8541a" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="13" y1="10" x2="21" y2="19" stroke="#e8541a" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="13" y1="10" x2="13" y2="0"  stroke="#e8541a" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <h3 class="text-4xl md:text-6xl font-bold mt-4 mb-6 md:mb-8 leading-tight">
+            Leadsult<br />Consulting
+          </h3>
+          <a
+            href="#contact"
+            class="inline-block px-6 py-2 border border-white/40 rounded-full text-sm hover:border-white transition-colors"
+          >
+            Get in Touch
+          </a>
+        </div>
+
+        <!-- Contact info -->
+        <div class="text-gray-400 text-sm space-y-1 pt-1">
+          <p>123-456-7890</p>
+          <p>info@mysite.com</p>
+        </div>
+
+        <!-- Address -->
+        <div class="text-gray-400 text-sm pt-1">
+          <p>500 Terry Francine St.</p>
+          <p>San Francisco, CA 94158</p>
+        </div>
+
+        <!-- Legal -->
+        <div class="text-gray-400 text-sm pt-1 space-y-1">
+          <p>© 2035 by Leadsult Consulting.</p>
+          <a href="#" class="underline underline-offset-2 hover:text-gray-300 transition-colors">
+            Built on Wix
+          </a>
+        </div>
+
+        <!-- Bottom links — flow naturally on mobile, col-positioned on desktop -->
+        <div class="text-sm text-gray-400 lg:col-start-2">
+          <a href="#" class="underline underline-offset-2 hover:text-gray-300 transition-colors">
+            Privacy Policy
+          </a>
+        </div>
+        <div class="text-sm text-gray-400 lg:col-start-3">
+          <a href="#" class="underline underline-offset-2 hover:text-gray-300 transition-colors">
+            Accessibility Statement
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
